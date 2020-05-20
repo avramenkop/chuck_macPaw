@@ -1,0 +1,409 @@
+@import url("./fonts/roboto.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    color: #333;
+}
+
+.left .container {
+    margin: 0 auto;
+    padding: 40px 140px 140px;
+}
+.right .container {
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.left {
+    width: 960px;
+    padding-top: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__logo {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.header__button {
+    display: none;
+}
+
+.get-joke__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 41px;
+    padding-top: 78px;
+    padding-bottom: 43px;
+}
+
+.get-joke__title span {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 44px;
+}
+
+
+.get-joke__item {
+    margin-bottom: 10px;
+}
+
+/* Radio */
+.radio {
+    position: relative;
+    margin-top: 1px;
+}
+
+.radio__input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+
+.radio__label {
+    padding-left: 34px;
+    font-size: 18px;
+    line-height: 26px;
+    color: #333333;
+    cursor: pointer;
+}
+
+.radio__label:before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ABABAB;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: -1px;
+    z-index: 1;
+    transition: border .1s linear;
+}
+
+.radio__label:after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    border-radius: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    z-index: 2;
+    transition: opacity .1s linear;
+}
+
+.radio__input:checked + .radio__label:before {
+    border-color: #333;
+}
+
+.radio__input:checked + .radio__label:after {
+    opacity: 1;
+}
+
+
+
+/* Вложенные радио */
+
+.get-joke__sub-item {
+    display: flex;
+    margin-top: 21px;
+    margin-bottom: 20px;
+}
+
+
+.get-joke__sub-item {
+    display: none;
+}
+
+.radio-inserted {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.radio-inserted__input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+
+.radio-inserted__label {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ABABAB;
+    cursor: pointer;
+    padding: 6px 12px;
+    border: 2px solid #F8F8F8;
+    border-radius: 6px;
+
+}
+
+.radio-inserted__label, .radio-inserted__label:not(last-child) {
+    margin-right: 10px;
+}
+
+.radio-inserted__input:checked + .radio-inserted__label {
+    color: #333333;
+}
+
+
+.text-inserted {
+    width: 100%;
+    margin-top: -1px;
+    margin-left: -1px;
+}
+
+.text-inserted__input {
+    width: 100%;
+    border: 2px solid #333333;
+    border-radius: 10px;
+    padding: 8px 0 8px 15px;
+}
+
+.text-inserted__input[placeholder] {
+    font-size: 16px;
+    line-height: 22px;
+    color: #ABABAB;
+}
+
+
+.get-joke__btn {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+    background: linear-gradient(92.01deg, #8EA7FF 0%, #7291FF 100%);
+    border-radius: 10px;
+    padding: 9px 37px;
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+.jokes {
+    padding-top: 40px;
+}
+
+.joke {
+    padding: 67px 40px 45px 100px;
+    background: #F8F8F8;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.joke::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background: url("./img/message.png");
+    height: 40px;
+    width: 40px;
+    top: 67px;
+    left: 40px;
+}
+
+.img {
+    background: transparent url("img/fav-disabled.png");
+    border: none;
+    outline: none;
+    height: 17px;
+    width: 20px;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    cursor: pointer;
+}
+
+.img-fav {
+    background: transparent url("img/fav-enabled.png");
+    border: none;
+    outline: none;
+    height: 17px;
+    width: 20px;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}
+
+.joke__id {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.joke__id img {
+    position: relative;
+    left: 5px;
+    top: 1px;
+}
+
+.joke__id a {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    color: #8EA7FF;
+}
+
+.joke__text {
+    font-size: 18px;
+    line-height: 26px;
+    color: #333333;
+    margin-top: 5px;
+}
+
+.joke__info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+
+.info__updated {
+    font-size: 10px;
+    line-height: 14px;
+    color: #ABABAB;
+}
+
+.info__category {
+    margin-top: -5px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #333333;
+    background: #FFFFFF;
+    border-radius: 6px;
+    padding: 6px 20px;
+}
+
+.info__category.hidden {
+    display: none;
+}
+
+.favourite__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #ABABAB;
+}
+
+.favs {
+    padding: 20px 0;
+}
+
+.fav-joke {
+    padding: 47px 20px 20px 80px;
+    background: #FFFFFF;
+    border: 1px solid #F8F8F8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+}
+
+.fav-joke::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background: url("./img/message.png");
+    height: 40px;
+    width: 40px;
+    top: 47px;
+    left: 20px;
+}
+
+.img.img-fav {
+    right: 20px;
+    top: 20px;
+}
+
+.fav-joke__id {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.fav-joke__id img {
+    position: relative;
+    left: 5px;
+    top: 1px;
+}
+
+.fav-joke__id a {
+    color: #8EA7FF;
+}
+
+.fav-joke__text {
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 5px;
+}
+
+.fav-info__updated {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    padding-top: 20px;
+    color: #ABABAB;
+}
+
+
+/* Колонка с избранным */
+.right {
+    width: 480px;
+    background: #F8F8F8;
+}
+
+
+
+
+/* адаптив */
+@media (min-width: 320px) and (max-width: 767px) {
+    body {
+        width: 100%;
+    }
+
+    .app {
+        width: 100%;
+    }
+
+    .left {
+        padding-top: 0;
+    }
+
+    .left .container {
+        padding: 20px;
+    }
+
+    .right {
+        display: none;
+    }
+}
+
