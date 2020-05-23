@@ -17,6 +17,7 @@ body {
     padding-left: 140px;
     padding-right: 140px;
 }
+
 .right .container {
     margin: 0 auto;
     padding: 40px;
@@ -30,6 +31,8 @@ body {
     overflow-x: hidden;
 }
 
+
+/* left column */
 .left {
     width: 960px;
     padding-top: 40px;
@@ -64,12 +67,12 @@ body {
     line-height: 44px;
 }
 
-
 .get-joke__item {
     margin-bottom: 10px;
 }
 
-/* Radio */
+
+/* radio inputs */
 .radio {
     position: relative;
     margin-top: 1px;
@@ -128,16 +131,13 @@ body {
 }
 
 
-
-/* Вложенные радио */
-
+/* inserted radio inputs */
 .get-joke__sub-item {
     display: flex;
     margin-top: 21px;
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
-
 
 .get-joke__sub-item {
     display: none;
@@ -165,7 +165,6 @@ body {
     padding: 6px 12px;
     border: 2px solid #F8F8F8;
     border-radius: 6px;
-
 }
 
 .radio-inserted__label, .radio-inserted__label:not(last-child) {
@@ -177,6 +176,7 @@ body {
 }
 
 
+/* text input */
 .text-inserted {
     width: 100%;
     margin-top: -1px;
@@ -202,6 +202,7 @@ body {
 }
 
 
+/* get joke button */
 .get-joke__btn {
     font-weight: bold;
     font-size: 16px;
@@ -215,7 +216,7 @@ body {
 }
 
 
-
+/* jokes DOM */
 .jokes {
     padding-top: 40px;
 }
@@ -240,7 +241,8 @@ body {
     left: 40px;
 }
 
-.img {
+/* add to fav */
+.add-to-fav {
     background: transparent url("img/fav-disabled.png");
     border: none;
     outline: none;
@@ -252,7 +254,8 @@ body {
     cursor: pointer;
 }
 
-.img-fav {
+/* delete fav joke */
+.delete-fav {
      background: transparent url("img/fav-enabled.png");
      border: none;
      outline: none;
@@ -264,7 +267,8 @@ body {
      cursor: pointer;
  }
 
-.fav-img {
+/* necessary to prevent delete fav joke clicking button in left col */
+.fav-btn {
     background: transparent url("img/fav-enabled.png");
     border: none;
     outline: none;
@@ -310,14 +314,14 @@ body {
 
 }
 
-.info__updated {
+.joke__updated {
     font-size: 10px;
     line-height: 14px;
     color: #ABABAB;
     margin-bottom: 10px;
 }
 
-.info__category {
+.joke__category {
     margin-top: -5px;
     font-weight: 500;
     font-size: 10px;
@@ -330,8 +334,12 @@ body {
     padding: 7px 20px;
 }
 
-.info__category.hidden {
-    display: none;
+
+/* favourite section */
+.right {
+    width: 480px;
+    background: #F8F8F8;
+    display: block;
 }
 
 .favourite__title {
@@ -388,7 +396,7 @@ body {
     padding-top: 5px;
 }
 
-.fav-info__updated {
+.fav-joke__updated {
     font-weight: 500;
     font-size: 10px;
     line-height: 14px;
@@ -397,17 +405,7 @@ body {
 }
 
 
-/* Колонка с избранным */
-.right {
-    width: 480px;
-    background: #F8F8F8;
-    display: block;
-}
-
-
-
-/* затемнение */
-
+/* backdrop */
 .backdrop {
     position: absolute;
     top: 0;
@@ -424,11 +422,7 @@ body {
 }
 
 
-
-
-/* бургер кнопка */
-
-
+/* burger button */
 .burger {
     display: none;
     align-items: center;
@@ -497,9 +491,7 @@ body {
 }
 
 
-
-/* мобильная колонка с избранным */
-
+/* favs mobile */
 .mobile-fav .container {
     padding: 88px 40px 40px;
 }
@@ -521,18 +513,8 @@ body {
 }
 
 
-
-
-/* адаптив */
+/* responsive */
 @media (min-width: 320px) and (max-width: 767.98px) {
-    body {
-        width: 100%;
-    }
-
-    .app {
-        width: 100%;
-    }
-
     .left {
         padding-top: 0;
     }
@@ -572,11 +554,9 @@ body {
         padding-left: 20px;
         padding-right: 20px;
     }
-
 }
 
 @media (max-width: 1200px) {
-
     .burger {
         display: flex;
     }
