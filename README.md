@@ -1,5 +1,9 @@
 # chuck_macPaw
 
+finished task - https://avramenkop.github.io/chuck_macPaw/
+
+
+Instructions 
 1. Use Chuck Norris API to get jokes in JSON format - https://api.chucknorris.io/ 
 2. Ability to get a random joke.
 3. Ability to get a random joke from categories (Use API to get all available categories).
