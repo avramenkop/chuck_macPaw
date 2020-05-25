@@ -18,8 +18,15 @@ class Storage {
       if(joke.id === id) {
         favJokes.splice(index, 1);
         localStorage.setItem('fav', JSON.stringify(favJokes));
-        let jokeFavShouldBeDeleted = document.querySelectorAll(`#${id}`);
-        jokeFavShouldBeDeleted.forEach(joke => joke.remove());
+
+        if(isNaN(+id[0])) {
+          let jokeFavShouldBeDeleted = document.querySelectorAll(`#${id}`);
+          jokeFavShouldBeDeleted.forEach(joke => joke.remove());
+        } else {
+          let jokeFavShouldBeDeleted = document.querySelectorAll(`#\\3${id}`);
+          jokeFavShouldBeDeleted.forEach(joke => joke.remove());
+        }
+
       }
     });
   }

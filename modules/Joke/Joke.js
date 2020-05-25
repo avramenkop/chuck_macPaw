@@ -9,7 +9,6 @@ class Joke {
       let data = await response.json();
 
       let updated_at = ConvertTime.convertTime(data).toFixed();
-
       const {id, value, categories} = data;
       return {id, value, updated_at, categories}
     } catch (error) {
@@ -25,8 +24,6 @@ class Joke {
           let data = await response.json();
 
           let updated_at = ConvertTime.convertTime(data).toFixed();
-
-
           const {id, value, categories} = data;
           return {id, value, updated_at, categories}
         } catch (error) {
